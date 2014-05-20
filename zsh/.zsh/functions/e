@@ -1,0 +1,4 @@
+function e {
+	local file="${1:-.}"
+	mate $file
+}

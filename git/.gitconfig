@@ -1,0 +1,52 @@
+[user]
+  name = Larry Fox
+  email = larrywfox@gmail.com
+
+[credential]
+  helper = osxkeychain
+
+[push]
+  default = simple
+
+[core]
+  excludesfile = ~/.gitignore
+
+[color]
+  ui = auto
+
+# insteadOf lets you do `git clone lf:dotfiles`
+[url "git@github.com:larryfox/"]
+  insteadOf = lf:
+[url "git@github.com:"]
+  insteadOf = gh:
+[url "git@github.com:oakstudios/"]
+  insteadOf = oak:
+
+[alias]
+  a = add
+  aa = add --all
+  branches = branch -a --color
+  c = commit
+  ammend = commit --amend
+  co = checkout
+  cof = checkout --
+  cob = checkout -b
+  df = diff
+  dfc = diff --cached
+  l = log --oneline --abbrev-commit
+  last = show -s --oneline --abbrev-commit
+  open = !gh browse
+  pl = pull
+  plr = pull --rebase
+  pr = !gh pull-request
+  ps = push
+  rb = rebase
+  rbc = rebase --continue
+  st = status -sb
+  summary = log --abbrev-commit --oneline --since=last.mon --reverse
+  unstage = reset HEAD --
+  # undo last commit and keep changes
+  undo = reset --soft HEAD^
+
+[github]
+  user = larryfox

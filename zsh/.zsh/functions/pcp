@@ -1,0 +1,4 @@
+# cp with progress bars
+function pcp {
+  pv "$1" > "$2"
+}

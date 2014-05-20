@@ -1,0 +1,52 @@
+# A lot of these are documented here
+# https://gist.github.com/dvessel/1478685
+
+excludeDirectories = "{$excludeDirectories,.gem,.bundle,.sass-cache}"
+
+TM_STRIP_WHITESPACE_ON_SAVE = true
+
+TM_GIT           = "/usr/local/bin/git"
+
+softTabs         = true
+tabSize          = 2
+
+[ .git/COMMIT_EDITMSG ]
+softWrap         = true
+spellChecking    = true
+spellingLanguage = 'en'
+
+[ source.julia ]
+softTabs         = true
+tabSize          = 4
+
+[ source.go ]
+softTabs         = false
+tabSize          = 8
+
+[ "{README,INSTALL,LICENSE,TODO}" ]
+fileType         = "text.plain"
+
+[ text ]
+spellChecking    = true
+softWrap         = false
+wrapColumn       = 80
+softTabs         = true
+tabSize          = 2
+
+[ text.haml ]
+wrapColumn       = "Use Window Frame"
+
+[ text.html ]
+wrapColumn       = "Use Window Frame"
+
+[ text.html.markdown ]
+softWrap         = true
+softTabs         = false
+tabSize          = 4
+wrapColumn       = 80
+
+[ text.plain ]
+softWrap         = true
+softTabs         = false
+wrapColumn       = "Use Window Frame"
+tabSize          = 4

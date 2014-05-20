@@ -1,0 +1,5 @@
+function genie {
+  local query=`printf "%s+" $@`
+  local result=`curl -s "https://weannie.pannous.com/api?out=simple&input=$query"`
+  echo $result
+}

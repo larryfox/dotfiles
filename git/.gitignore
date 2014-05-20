@@ -1,0 +1,25 @@
+.DS_Store
+.svn
+*~
+*.swp
+
+tags
+
+# Thumbnails
+._*
+
+.sass-cache
+.gem
+.bundle
+
+components
+npm-debug.log
+
+*.ignore
+.scratch
+*.sublime*
+.vagrant
+
+# emacs
+[#]*[#]
+.\#*

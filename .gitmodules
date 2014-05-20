@@ -1,0 +1,18 @@
+[submodule "vim/.vim/bundle/vim-pathogen"]
+	path = vim/.vim/bundle/vim-pathogen
+	url = git@github.com:tpope/vim-pathogen.git
+[submodule "vim/.vim/bundle/vim-surround"]
+	path = vim/.vim/bundle/vim-surround
+	url = gh:tpope/vim-surround
+[submodule "vim/.vim/bundle/vim-sensible"]
+	path = vim/.vim/bundle/vim-sensible
+	url = gh:tpope/vim-sensible
+[submodule "vim/.vim/bundle/vim-fugitive"]
+	path = vim/.vim/bundle/vim-fugitive
+	url = gh:tpope/vim-fugitive
+[submodule "vim/.vim/bundle/vim-ruby-xmpfilter"]
+	path = vim/.vim/bundle/vim-ruby-xmpfilter
+	url = gh:t9md/vim-ruby-xmpfilter
+[submodule "vim/.vim/bundle/vim-commentary"]
+	path = vim/.vim/bundle/vim-commentary
+	url = gh:tpope/vim-commentary.git

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+filename=`date -u +'%s'`
+screencapture -sx "$HOME/Jif.bz/shotty/$filename.png"
+url="http://jif.bz/shotty/$filename.png"
+echo "💥  $url" && echo $url | pbcopy
+exit

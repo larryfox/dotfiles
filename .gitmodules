@@ -16,3 +16,9 @@
 [submodule "vim/.vim/bundle/vim-commentary"]
 	path = vim/.vim/bundle/vim-commentary
 	url = gh:tpope/vim-commentary.git
+[submodule "vim/.vim/bundle/ctrlp.vim"]
+	path = vim/.vim/bundle/ctrlp.vim
+	url = gh:kien/ctrlp.vim.git
+[submodule "vim/.vim/bundle/julia-vim"]
+	path = vim/.vim/bundle/julia-vim
+	url = git://github.com/JuliaLang/julia-vim.git

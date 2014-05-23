@@ -11,8 +11,6 @@ do
   source $file
 done
 
-attach_to_tmux
-
 # brew install zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

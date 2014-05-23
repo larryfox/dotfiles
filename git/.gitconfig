@@ -33,8 +33,8 @@
   cob = checkout -b
   df = diff
   dfc = diff --cached
-  l = log --oneline --abbrev-commit
-  last = show -s --oneline --abbrev-commit
+  l = log --oneline
+  last = show -s --oneline
   open = !gh browse
   pl = pull
   plr = pull --rebase
@@ -43,7 +43,7 @@
   rb = rebase
   rbc = rebase --continue
   st = status -sb
-  summary = log --abbrev-commit --oneline --since=last.mon --reverse
+  summary = log --oneline --since=last.mon --reverse
   unstage = reset HEAD --
   # undo last commit and keep changes
   undo = reset --soft HEAD^

@@ -1,16 +1,21 @@
 # path.zsh
+typeset -aU path
+typeset -aU manpath
 
 # Homebrew
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+path=( /usr/local/bin /usr/local/sbin $path )
 
 # GNU core utilities without 'g' prefix
-PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+path=( $(brew --prefix coreutils)/libexec/gnubin $path )
+
+# Go
+path=( $GOPATH/bin $path )
 
 # Local bins
-PATH="$HOME/bin:$PATH"
+path=( $HOME/bin $path )
 
 # Postgres.app
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+path=( /Applications/Postgres.app/Contents/MacOS/bin/bin $path )
 
 # Homebrew man pages
-MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
+manpath=(/usr/local/man /usr/local/git/man $manpath)

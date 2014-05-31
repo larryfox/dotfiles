@@ -30,6 +30,9 @@ alias sudo="sudo "
 # Gzip-enabled `curl`
 alias gurl="curl --compressed"
 
+# list all programs
+alias which="which -a"
+
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$method"="lwp-request -m '$method'"

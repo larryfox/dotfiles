@@ -116,19 +116,6 @@ set showmode
 " Use ; instead of :
 nnoremap ; :
 
-" n00b mode / disable arrow keys
-noremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
-
-
 " Move around splits with ctrl + j,k,h,l
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -153,14 +140,14 @@ inoremap jj <ESC>
 " Easy buffer switching
 nnoremap <leader><leader> <c-^>
 
-
+" xmpfilter for inline ruby interpretation
 autocmd FileType ruby nmap <buffer> mm <Plug>(xmpfilter-mark)
 autocmd FileType ruby xmap <buffer> mm <Plug>(xmpfilter-mark)
 
 autocmd FileType ruby nmap <buffer> mr <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> mr <Plug>(xmpfilter-run)
 
-
+" This broke at some point
 " Relative line numbers
 function! NumberToggle()
   if(&relativenumber == 1)

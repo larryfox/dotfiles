@@ -42,7 +42,6 @@ export PROMPT_EOL_MARK=''
 
 # prompt turns red if the previous command didn't exit with 0
 directory="%F{blue}%~%f"
-export PROMPT="
-%(?.%F{magenta}.%F{red})❯%f "
+export PROMPT="%(?..[%F{red}%?%f]%F{red}) ❯%f "
 
-export RPROMPT="$directory\$(git_branch)" 
+export RPROMPT="$directory\$(git_branch)"

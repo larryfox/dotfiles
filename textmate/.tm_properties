@@ -23,6 +23,12 @@ tabSize          = 4
 softTabs         = false
 tabSize          = 8
 
+[ source.erlang ]
+tabSize          = 4
+
+[ source.ruby ]
+softWrap         = true
+
 [ "{README,INSTALL,LICENSE,TODO}" ]
 fileType         = "text.plain"
 

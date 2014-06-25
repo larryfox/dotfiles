@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# `ipfw` is technically deprecated but from what I can tell `pfctl` requires
+# using config files which I dont feel like dealing with for quick and dirty
+# temporary port forwarding.
+
+set -e
+
+if [ "$1" = "--flush" ] || [ "$1" = "-f" ]
+then
+    sudo ipfw flush
+    echo "🚽"
+    exit
+fi
+
+if [ "$1" = "--show" ] || [ "$1" = "-s" ]
+then
+    sudo ipfw show
+    exit
+fi
+
+if [[ -z "$1" ]] || [[ -z "$2" ]]
+then
+    echo "usage: bindto [--flush|-f] <from> <to>"
+    exit 1
+fi
+
+function main {
+    echo "Binding port $from to port $to"
+    sudo ipfw add 100 fwd 127.0.0.1,$from tcp from any to any $to in 2>&1 >/dev/null
+}
+
+from=$1
+to=$2
+
+main
+exit

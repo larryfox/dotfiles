@@ -4,6 +4,9 @@
 # Allow us to echo \n
 shopt -s xpg_echo
 
+# Preserves leading/trailing whitespace for `read`
+IFS=
+
 version="0.0.1"
 
 function print_usage {
@@ -26,7 +29,7 @@ function die_happily {
 }
 
 function die_unhappily {
-    echo "$1"
+    echo "$1" >&2
     print_usage
     exit 1
 }
@@ -54,7 +57,7 @@ function main {
     year="$(date +%Y)"
 
     case $license in
-        MIT) license="
+        MIT) read -d '' license <<EOF
 The MIT License (MIT)
 
 Copyright (c) $year $name
@@ -76,10 +79,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-"
+EOF
         ;;
 
-        WTFPL) license="
+        WTFPL) read -d '' license <<EOF
         DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
 
@@ -93,10 +96,10 @@ as the name is changed.
   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
  0. You just DO WHAT THE FUCK YOU WANT TO.
-"
+EOF
         ;;
 
-        UNLICENSE) license="
+        UNLICENSE) read -d '' license <<EOF
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -121,10 +124,10 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org>
-"
+EOF
         ;;
 
-        AGPL) license="
+        AGPL) read -d '' license <<EOF
 Copyright (C) $year $name
 
 This program is free software: you can redistribute it and/or modify
@@ -139,10 +142,10 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-"
+EOF
         ;;
 
-        AGPL_FULL) license="
+        AGPL_FULL) read -d '' license <<EOF
                 GNU AFFERO GENERAL PUBLIC LICENSE
                    Version 3, 19 November 2007
 
@@ -804,15 +807,15 @@ specific requirements.
 if any, to sign a \"copyright disclaimer\" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU AGPL, see
 <http://www.gnu.org/licenses/>.
-"
+EOF
         ;;
     esac
 
     if [[ -z "$output" ]]
     then
-        echo "$license"
+        echo -n "$license"
     else
-        echo "$license" > "$output"
+        echo -n "$license" > "$output"
     fi
 }
 

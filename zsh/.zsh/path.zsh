@@ -11,6 +11,9 @@ path=( $(brew --prefix coreutils)/libexec/gnubin $path )
 # Go
 path=( $GOPATH/bin $path )
 
+# Cabal
+path=( $HOME/.cabal/bin $path )
+
 # Local bins
 path=( $HOME/bin $path )
 

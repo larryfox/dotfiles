@@ -83,4 +83,6 @@ autocmd FileType ruby xmap <buffer> mm <Plug>(xmpfilter-mark)
 
 autocmd FileType ruby nmap <buffer> mr <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> mr <Plug>(xmpfilter-run)
+
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.rc set filetype=rust

@@ -1,1 +1,1 @@
-alias julia="/Users/fox/Applications/Julia-0.3.0-prerelease-3e6a6c7bd8.app/Contents/Resources/julia/bin/julia -q "
+alias julia="/Users/fox/Applications/Julia-0.3.0-rc1-a327b47bbf.app/Contents/Resources/julia/bin/julia -q "

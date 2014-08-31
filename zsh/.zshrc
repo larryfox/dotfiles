@@ -14,13 +14,12 @@ done
 # brew install zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# MacTeX
+# eval `/usr/libexec/path_helper -s`
+
 export MANPATH
 export PATH
 
 # cd into project directories from anywhere
 # extra fun with auto_cd enabled
 export CDPATH=$PROJECTS
-
-# OPAM configuration
-. /Users/fox/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval `opam config env`

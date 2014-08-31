@@ -7,6 +7,7 @@ path=( /usr/local/bin /usr/local/sbin $path )
 
 # GNU core utilities without 'g' prefix
 path=( $(brew --prefix coreutils)/libexec/gnubin $path )
+manpath=( $(brew --prefix coreutils)/libexec/gnuman $manpath )
 
 # Go
 path=( $GOPATH/bin $path )
@@ -21,4 +22,4 @@ path=( $HOME/bin $path )
 path=( /Applications/Postgres.app/Contents/MacOS/bin/bin $path )
 
 # Homebrew man pages
-manpath=(/usr/local/man /usr/local/git/man $manpath)
+manpath=( /usr/local/man /usr/local/git/man $manpath )

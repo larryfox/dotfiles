@@ -24,11 +24,15 @@ set sidescrolloff=4
 set scrolloff=4
 
 
+" nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
 " colors
 syntax on
 set background=light
 set t_Co=256
-colorscheme GitHub
+colorscheme Github
+set guifont=Consolas:h12.00 
+set linespace=2
 
 set tabstop=4 softtabstop=2 shiftwidth=2 expandtab
 
@@ -85,4 +89,24 @@ autocmd FileType ruby nmap <buffer> mr <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> mr <Plug>(xmpfilter-run)
 
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.rc set filetype=rust
+au BufRead,BufNewFile *.rs set filetype=rust
+au BufRead,BufNewFile *.go set filetype=go
+
+" Quicker completion
+inoremap <C-]> <C-X><C-]>
+inoremap <C-F> <C-X><C-F>
+inoremap <C-D> <C-X><C-D>
+inoremap <C-L> <C-X><C-L>
+
+" Move through complete menu with <TAB>
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" <TAB> completion
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-N>"
+   endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>

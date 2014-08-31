@@ -10,3 +10,9 @@
 [submodule "vim/.vim/bundle/julia-vim"]
 	path = vim/.vim/bundle/julia-vim
 	url = git://github.com/JuliaLang/julia-vim.git
+[submodule "vim/.vim/bundle/vim-go"]
+	path = vim/.vim/bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "vim/.vim/bundle/rust.vim"]
+	path = vim/.vim/bundle/rust.vim
+	url = https://github.com/wting/rust.vim.git

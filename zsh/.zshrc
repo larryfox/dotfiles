@@ -14,9 +14,6 @@ done
 # brew install zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# MacTeX
-# eval `/usr/libexec/path_helper -s`
-
 export MANPATH
 export PATH
 

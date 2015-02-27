@@ -9,9 +9,9 @@ alias rls="rails"
 # chruby
 source /usr/local/share/chruby/chruby.sh
 
-# chruby with auto-switching
-# source /usr/local/share/chruby/auto.sh
+# gem_home
+source /usr/local/share/gem_home/gem_home.sh
 
 function chrb {
-    chruby $1 && chgems
+    chruby $1 && gem_home .
 }

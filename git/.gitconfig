@@ -47,6 +47,7 @@
   unstage = reset HEAD --
   # undo last commit and keep changes
   undo = reset --soft HEAD^
+  zip = !git archive -o `git log -n 1 --format="git-%h"`.zip HEAD
 
 [github]
   user = larryfox

@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# The MIT License (MIT) Copyright (c) 2015 Larry Fox
+#
+#   Usage: timer 5m Hello from five minutes ago
+#
+
+set -e
+
+function usage {
+    echo "usage: timer number[suffix] [message]..."
+    echo "       where suffix may be one of 's' for seconds (default),"
+    echo "       'm' for minutes, 'h' for hours or 'd' for days."
+    exit $1
+}
+
+function invalid_time {
+    echo "invalid time interval ‘$1’"
+    usage 1
+}
+
+function timer {
+    sleep $1
+    shift
+    /usr/bin/osascript -e "display notification \"$*\" with title \"⏰ timer\""
+}
+
+function main {
+    suffix="${1: -1}"
+    prefix="${1%?}"
+
+    # Exit if there is no prefix and suffix is not a number
+    # or if there is a prefix and prefix is not a number
+    if (test -z "$prefix" && test -z "${suffix##*[!0-9]*}" ||
+        test -n "$prefix" && test -z "${prefix##*[!0-9.]*}")
+    then
+        invalid_time "$1"
+    fi
+
+    case $suffix in
+        # Check if a suffix exists
+        d) number=$(echo "$prefix * 86400" | bc -l) ;;
+        h) number=$(echo "$prefix * 3600"  | bc -l) ;;
+        m) number=$(echo "$prefix * 60"    | bc -l) ;;
+        s) number="$prefix" ;;
+        *[0-9]*) number="$1" ;;
+        # Exit if the suffix is none of the above
+        *) invalid_time "$1" ;;
+    esac
+
+    shift
+    timer $number $* &
+    echo "⏰  Set"
+}
+
+test -z "$1" && usage 1
+case $1 in
+    -h|--help) usage 0 ;;
+esac
+
+main $*
+exit

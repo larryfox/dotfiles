@@ -1,8 +1,8 @@
 # aliases.zsh
 
-alias q="vim ~/.zshrc"
+alias q="$EDITOR ~/.zshrc"
 alias qq="source ~/.zshrc"
-alias ql="vim ~/.localrc"
+alias ql="$EDITOR ~/.localrc"
 
 # verbose/interactive
 alias cp="cp -iv"
@@ -32,6 +32,8 @@ alias gurl="curl --compressed"
 
 # list all programs
 alias which="which -a"
+
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do

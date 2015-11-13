@@ -15,10 +15,12 @@ SAVEHIST=$HISTSIZE
 
 # enable multiple shells to share a common history
 setopt inc_append_history
+setopt share_history
 
 # Those who repeat history are doomed to have a lot of useless history entries
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
+setopt hist_ignore_space
 
 # add timestamps to history
 setopt extended_history

@@ -1,52 +1,24 @@
-# always update homebrew
-update
-
-
-####################
-# NICE TO HAVES
-####################
+# stow manages these dotfiles
+brew 'stow'
 
 # grep for ps
-install pgrep
+brew 'pgrep'
 
 # grep for json
-install jq
+brew 'jq'
 
-# stow manages these dotfiles
-install stow
+# gnu tools
+brew 'coreutils'
 
-# GNU versions of a lot of commands
-install coreutils
+# terminal sanity
+brew 'zsh'
+brew 'zsh-syntax-highlighting'
+brew 'dvtm'
+brew 'abduco'
 
+# development
+brew 'git'
 
-####################
-# RUBY
-####################
-install chruby
-install chgems
-install ruby-install
-
-
-####################
-# ZSH
-####################
-install zsh
-install zsh-syntax-highlighting
-
-
-####################
-# GIT
-####################
-install git
-
-# github sugar for git
-install gh
-
-
-####################
-# TMUX
-####################
-install tmux
-
-# so copy/paste works in tmux
-install reattach-to-user-namespace
+brew 'chruby'
+brew 'gem_home'
+brew 'ruby-install'

@@ -6,6 +6,7 @@ excludeDirectories = "{$excludeDirectories,.gem,.bundle,.sass-cache}"
 TM_STRIP_WHITESPACE_ON_SAVE = true
 
 TM_GIT           = "/usr/local/bin/git"
+TM_RUBY          = "/Users/fox/.rubies/ruby-2.2.2/bin/ruby"
 
 softTabs         = true
 tabSize          = 2

@@ -35,11 +35,8 @@
   dfc = diff --cached
   l = log --oneline
   last = show -s --oneline
-  open = !gh browse
-  pl = pull
   plr = pull --rebase
-  pr = !gh pull-request
-  ps = push
+  pushup = !git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`
   rb = rebase
   rbc = rebase --continue
   st = status -sb
@@ -48,6 +45,8 @@
   # undo last commit and keep changes
   undo = reset --soft HEAD^
   zip = !git archive -o `git log -n 1 --format="git-%h"`.zip HEAD
+  # abandon ship
+  fuckthis = !git fetch origin && git reset --hard origin/`git symbolic-ref --short HEAD`
 
 [github]
   user = larryfox

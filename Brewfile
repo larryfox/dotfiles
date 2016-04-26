@@ -17,6 +17,9 @@ brew 'zsh-syntax-highlighting'
 # development
 brew 'git'
 
+# rubby
 brew 'chruby'
-brew 'gem_home'
 brew 'ruby-install'
+brew 'https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb', args: ['HEAD']
+
+brew 'go'

@@ -13,8 +13,6 @@ brew 'coreutils'
 # terminal sanity
 brew 'zsh'
 brew 'zsh-syntax-highlighting'
-brew 'dvtm'
-brew 'abduco'
 
 # development
 brew 'git'

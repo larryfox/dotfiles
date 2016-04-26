@@ -3,11 +3,13 @@
 
 excludeDirectories = "{$excludeDirectories,.gem,.bundle,.sass-cache,node_modules,bower_components,log}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$extraExcludes,node_modules,bower_components,log}"
+fileBrowserGlob  = "{*,.tm_properties,.htaccess,.*}"
 
 TM_STRIP_WHITESPACE_ON_SAVE = true
 
 TM_GIT           = "/usr/local/bin/git"
-TM_RUBY          = "/Users/fox/.rubies/ruby-2.2.2/bin/ruby"
+TM_RUBY          = "/Users/fox/.rubies/ruby-2.3.0/bin/ruby"
+PATH             = "$PATH:/opt/local/bin:/usr/local/bin:/usr/texbin:$HOME/bin"
 
 softTabs         = true
 tabSize          = 2

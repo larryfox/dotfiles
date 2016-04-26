@@ -1,7 +1,8 @@
 # A lot of these are documented here
 # https://gist.github.com/dvessel/1478685
 
-excludeDirectories = "{$excludeDirectories,.gem,.bundle,.sass-cache}"
+excludeDirectories = "{$excludeDirectories,.gem,.bundle,.sass-cache,node_modules,bower_components,log}"
+excludeInFolderSearch = "{$excludeInFolderSearch,$extraExcludes,node_modules,bower_components,log}"
 
 TM_STRIP_WHITESPACE_ON_SAVE = true
 
@@ -29,6 +30,10 @@ tabSize          = 4
 
 [ source.ruby ]
 softWrap         = true
+tabSize          = 2
+
+[ source.swift ]
+tabSize          = 4
 
 [ "{README,INSTALL,LICENSE,TODO}" ]
 fileType         = "text.plain"

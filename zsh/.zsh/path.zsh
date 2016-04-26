@@ -12,6 +12,9 @@ manpath=( $(brew --prefix coreutils)/libexec/gnuman $manpath )
 # Go
 [ -n "$GOPATH" ] && path=( $GOPATH/bin $path )
 
+# Swift
+path=( /Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin $path )
+
 # Local bins
 path=( $HOME/bin $path )
 

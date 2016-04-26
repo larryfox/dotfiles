@@ -28,12 +28,12 @@ zstyle ':vcs_info:git*' actionformats " %b|%a"
 
 # Must use print (not echo) for ZSH colors to work
 function git_branch {
-  [[ "$vcs_info_msg_0_" != '' ]] && print "%F{242}${vcs_info_msg_0_}$(git_dirty)%f"
+  test -z "$vcs_info_msg_0_" || print "%F{242}${vcs_info_msg_0_}$(git_dirty)%f"
 }
 
 function git_dirty {
-  command git diff --quiet --ignore-submodules HEAD &>/dev/null
-  (($? == 1)) && echo ' ✗'
+  git diff-index --quiet --ignore-submodules HEAD &>/dev/null
+  (($? == 1)) && echo ' %F{red}✗'
 }
 
 # prevent percentage showing up

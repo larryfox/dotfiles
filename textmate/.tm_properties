@@ -1,14 +1,16 @@
 # A lot of these are documented here
 # https://gist.github.com/dvessel/1478685
 
-excludeDirectories = "{$excludeDirectories,.gem,.bundle,.sass-cache,node_modules,bower_components,log}"
+excludeDirectories = "{$excludeDirectories,.git,.gem,.bundle,.sass-cache,node_modules,bower_components,log}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$extraExcludes,node_modules,bower_components,log}"
-fileBrowserGlob  = "{*,.tm_properties,.htaccess,.*}"
+fileBrowserGlob  = "{*,.*}"
+excludeFiles     = "{$excludeFiles,.DS_Store}"
 
 TM_STRIP_WHITESPACE_ON_SAVE = true
 
 TM_GIT           = "/usr/local/bin/git"
 TM_RUBY          = "/Users/fox/.rubies/ruby-2.3.0/bin/ruby"
+TM_GOIMPORTS     = "/Users/fox/Code/go/bin/goimports"
 PATH             = "$PATH:/opt/local/bin:/usr/local/bin:/usr/texbin:$HOME/bin"
 
 softTabs         = true

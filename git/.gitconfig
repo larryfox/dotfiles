@@ -26,7 +26,6 @@
   a = add
   aa = add --all
   branches = branch -a --color
-  c = commit
   ammend = commit --amend
   co = checkout
   cof = checkout --
@@ -37,9 +36,6 @@
   last = show -s --oneline
   plr = pull --rebase
   pushup = !git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`
-  rb = rebase
-  rbc = rebase --continue
-  st = status -sb
   summary = log --oneline --since=last.mon --reverse
   unstage = reset HEAD --
   # undo last commit and keep changes

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+read -r -d '' JS <<JS
+function run () {
+  var iTunes = Application("iTunes")
+  if (!iTunes.running()) { return JSON.stringify({ state: "closed" }) }
+  
+  var state = iTunes.playerState()
+  if ('stopped' === state) { return JSON.stringify({ state: state }) }
+  
+  var current = iTunes.currentTrack()
+  var position = iTunes.playerPosition()
+  return JSON.stringify({
+    state: state,
+    artist: current.artist(),
+    name: current.name(),
+    album: current.album(),
+    duration: current.duration(),
+    position: position,
+    remaining: current.duration() - position
+  })
+}
+JS
+
+osascript -l JavaScript -e "$JS"

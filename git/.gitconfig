@@ -1,6 +1,6 @@
 [user]
   name = Larry Fox
-  email = larrywfox@gmail.com
+  email = l@rryfox.us
 
 [credential]
   helper = osxkeychain
@@ -10,21 +10,13 @@
 
 [core]
   excludesfile = ~/.gitignore
+  editor = nvim
 
 [color]
   ui = auto
 
-# insteadOf lets you do `git clone lf:dotfiles`
-[url "git@github.com:larryfox/"]
-  insteadOf = lf:
-[url "git@github.com:"]
-  insteadOf = gh:
-[url "git@github.com:oakstudios/"]
-  insteadOf = oak:
-
 [alias]
   a = add
-  aa = add --all
   branches = branch -a --color
   ammend = commit --amend
   co = checkout
@@ -46,3 +38,6 @@
 
 [github]
   user = larryfox
+
+[rerere]
+	enabled = true

@@ -12,7 +12,6 @@ tags
 .gem
 .bundle
 
-components
 npm-debug.log
 
 *.ignore

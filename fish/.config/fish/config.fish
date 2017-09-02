@@ -1,0 +1,3 @@
+set PROJECTS $HOME/Code
+
+set CDPATH . $PROJECTS $CDPATH

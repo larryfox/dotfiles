@@ -1,18 +1,16 @@
 # stow manages these dotfiles
 brew 'stow'
 
-# grep for ps
-brew 'pgrep'
-
-# grep for json
-brew 'jq'
-
 # gnu tools
 brew 'coreutils'
 
 # terminal sanity
-brew 'zsh'
-brew 'zsh-syntax-highlighting'
+brew 'fish'
+
+brew 'neovim'
+
+# better grep
+brew 'ripgrep'
 
 # development
 brew 'git'
@@ -24,3 +22,5 @@ brew 'https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb',
   args: ['HEAD']
 
 brew 'go'
+brew 'rust'
+

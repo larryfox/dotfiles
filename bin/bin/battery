@@ -2,11 +2,11 @@
 set -e
 
 ioreg -rc AppleSmartBattery | awk -F ' = ' '
-/CurrentCapacity/   { cur_bat = $2 }
-/MaxCapacity/       { max_bat = $2 }
-/ExternalConnected/ { plug = $2 }
+/CurrentCapacity/ { cur_bat = $2 }
+/MaxCapacity/     { max_bat = $2 }
+/IsCharging/      { plug = $2 }
 END {
     if (plug == "Yes") { printf "🔌  " } else { printf "🔋  " }
-    printf "%.3g%%", (cur_bat/max_bat)*100
+    printf "%.3g%%\n", (cur_bat/max_bat)*100
 }'
 exit

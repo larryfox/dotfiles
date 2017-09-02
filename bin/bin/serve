@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+port="${1:-8000}"
+sleep 1 && open "http://localhost:${port}/" &
+php -S 127.0.0.1:$port

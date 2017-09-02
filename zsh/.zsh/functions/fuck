@@ -1,7 +1,0 @@
-# https://gist.github.com/namuol/9122237#comment-1179163
-# https://gist.github.com/sztupy/9138124
-
-function fuck {
-  for last; do true; done
-  pkill -9 "$last" && echo -e "\n (╯°□°）╯︵$(flip "$last")\n"
-}

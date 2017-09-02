@@ -1,5 +1,0 @@
-function random {
-	local rand="$(openssl rand -base64 ${1:-33})"
-	echo -e "$rand" &&
-	echo -e "$rand" | pbcopy
-}

@@ -1,26 +1,27 @@
-ZSH="$HOME/.zsh"
-PROJECTS="$HOME/Code"
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
 
-[[ -a $HOME/.localrc ]] && source $HOME/.localrc
+# enable multiple shells to share a common history
+setopt inc_append_history
+setopt share_history
 
-fpath=($ZSH/functions $fpath)
-autoload -U $ZSH/functions/*(:t)
+# add timestamps to history
+setopt extended_history
 
-for file in `find $ZSH -maxdepth 2 -name \*.zsh`
-do
-  source $file
-done
+autoload -Uz promptinit
+promptinit
+prompt walters
 
-# brew install zsh-syntax-highlighting
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# chruby
+source /usr/local/share/chruby/chruby.sh
 
-export MANPATH
-export PATH
+# gem_home
+source /usr/local/share/gem_home/gem_home.sh
 
-# cd into project directories from anywhere
-# extra fun with auto_cd enabled
-export CDPATH=$PROJECTS
+function chrb {
+    chruby $1 && gem_home .
+}
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

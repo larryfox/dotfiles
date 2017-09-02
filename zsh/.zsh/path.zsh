@@ -18,5 +18,8 @@ path=( /Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin $path )
 # Local bins
 path=( $HOME/bin $path )
 
+# Git man pages
+manpath=( /usr/local/git/man $manpath )
+
 # Homebrew man pages
-manpath=( /usr/local/man /usr/local/git/man $manpath )
+manpath=( /usr/local/man $manpath )

@@ -1,8 +1,3 @@
-# Bundler
-alias bi="bundle install"
-alias bu="bundle update"
-alias be="bundle exec"
-
 # chruby
 source /usr/local/share/chruby/chruby.sh
 

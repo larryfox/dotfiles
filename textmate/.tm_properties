@@ -29,14 +29,16 @@ tabSize          = 4
 softTabs         = false
 tabSize          = 8
 
-[ source.erlang ]
-tabSize          = 4
-
 [ source.ruby ]
 softWrap         = true
-tabSize          = 2
 
 [ source.swift ]
+tabSize          = 4
+
+[ source.d ]
+tabSize          = 4
+
+[ source.rust ]
 tabSize          = 4
 
 [ "{README,INSTALL,LICENSE,TODO}" ]

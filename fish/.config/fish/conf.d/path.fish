@@ -1,12 +1,12 @@
-# Homebrew
-set PATH /usr/local/sbin $PATH
-
 # GNU core utilities without 'g' prefix (brew --prefix coreutils)
 set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 set MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
 
 # Go
 set PATH $GOPATH/bin $PATH
+
+# Rust
+set PATH $HOME/.cargo/bin $PATH
 
 # Local bins
 set PATH $HOME/bin $PATH

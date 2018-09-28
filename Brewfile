@@ -17,10 +17,10 @@ brew 'git'
 
 # rubby
 brew 'chruby'
+brew 'chruby-fish'
 brew 'ruby-install'
 brew 'https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb',
   args: ['HEAD']
 
 brew 'go'
-brew 'rust'
 

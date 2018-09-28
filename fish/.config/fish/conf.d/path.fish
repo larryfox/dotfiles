@@ -5,9 +5,6 @@ set MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
 # Go
 set PATH $GOPATH/bin $PATH
 
-# Rust
-set PATH $HOME/.cargo/bin $PATH
-
 # Local bins
 set PATH $HOME/bin $PATH
 

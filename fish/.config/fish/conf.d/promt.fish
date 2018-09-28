@@ -2,6 +2,9 @@ function fish_title
   # Terminal.app handles this
 end
 
+# Remove greeting
+set fish_greeting
+
 function fish_prompt
     printf ' ❯ '
 end

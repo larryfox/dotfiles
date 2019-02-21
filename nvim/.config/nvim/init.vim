@@ -1,5 +1,6 @@
 set runtimepath^=~/.config/nvim/bundle/ctrlp.vim
 set runtimepath^=~/.config/nvim/bundle/vim-go
+set runtimepath^=~/.config/nvim/bundle/yats.vim
 set runtimepath^=~/.config/nvim/bundle/neomake
 
 let g:ctrlp_map = "<c-p>"

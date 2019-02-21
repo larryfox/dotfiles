@@ -2,3 +2,4 @@ scripts/
 .saveplace
 emacs/
 .netrwhist
+nvim/.config/nvim/bundle/

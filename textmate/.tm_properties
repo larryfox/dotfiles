@@ -9,7 +9,7 @@ excludeFiles     = "{$excludeFiles,.DS_Store}"
 TM_STRIP_WHITESPACE_ON_SAVE = true
 
 TM_GIT           = "/usr/local/bin/git"
-TM_RUBY          = "/Users/fox/.rubies/ruby-2.3.0/bin/ruby"
+TM_RUBY          = "/Users/fox/.rubies/ruby-2.5.1/bin/ruby"
 TM_GOIMPORTS     = "/Users/fox/Code/go/bin/goimports"
 PATH             = "$PATH:/opt/local/bin:/usr/local/bin:/usr/texbin:$HOME/bin"
 

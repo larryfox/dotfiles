@@ -1,15 +1,13 @@
 # GNU core utilities without 'g' prefix (brew --prefix coreutils)
-set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+set -U fish_user_paths /usr/local/opt/coreutils/libexec/gnubin $fish_user_paths
 set MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
 
+# sqlite
+set -U fish_user_paths /usr/local/opt/sqlite/bin $fish_user_paths
+
 # Go
-set PATH $GOPATH/bin $PATH
+set fish_user_paths $GOPATH/bin $fish_user_paths
 
 # Local bins
-set PATH $HOME/bin $PATH
+set fish_user_paths $HOME/bin $fish_user_paths
 
-# Git man pages
-set MANPATH /usr/local/git/man $MANPATH
-
-# Homebrew man pages
-set MANPATH /usr/local/man $MANPATH

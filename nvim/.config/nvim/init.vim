@@ -13,9 +13,20 @@ let g:go_term_mode = "split"
 let g:go_highlight_types = 0
 let g:go_highlight_operators = 0
 
+
+
+" ==============
+" Neomake Config
+" ==============
+
+let g:neomake_typescript_enabled_makers = ['tslint']
+let g:neomake_typescript_tslint_exe = 'npx'
+let g:neomake_typescript_tslint_args = ['tslint', '-t', 'prose']
+
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_javascript_eslint_exe = 'npx'
 let g:neomake_javascript_eslint_args = ['eslint', '--format=compact']
+
 let g:neomake_warning_sign = {
   \ 'text': 'W',
   \ 'texthl': 'WarningMsg',

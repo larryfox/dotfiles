@@ -19,13 +19,13 @@ let g:go_highlight_operators = 0
 " Neomake Config
 " ==============
 
-let g:neomake_typescript_enabled_makers = ['tslint']
-let g:neomake_typescript_tslint_exe = 'npx'
-let g:neomake_typescript_tslint_args = ['tslint', '-t', 'prose']
-
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_javascript_eslint_exe = 'npx'
-let g:neomake_javascript_eslint_args = ['eslint', '--format=compact']
+let g:neomake_javascript_eslint_args = ['eslint', '-f=compact']
+
+let g:neomake_typescript_enabled_makers = ['eslint']
+let g:neomake_typescript_eslint_exe = 'npx'
+let g:neomake_typescript_eslint_args = ['eslint', '-f=compact']
 
 let g:neomake_warning_sign = {
   \ 'text': 'W',
@@ -35,6 +35,7 @@ let g:neomake_error_sign = {
   \ 'text': 'E',
   \ 'texthl': 'ErrorMsg',
   \ }
+
 autocmd BufWritePost,BufEnter * Neomake
 
 
@@ -42,8 +43,8 @@ autocmd BufWritePost,BufEnter * Neomake
 " ==========
 " Vim Config
 " ==========
-
 syntax off
+set background=light
 set number relativenumber
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set number relativenumber
@@ -53,11 +54,16 @@ set shiftwidth=2
 set expandtab
 set smarttab
 
+" case insensitive searching
+set ignorecase
+set smartcase
+
 " enable mouse reporting
 set mouse=a
 
 filetype plugin indent on
 
+autocmd BufRead,BufNewFile *.tsx setlocal filetype=typescript.tsx tabstop=2 shiftwidth=2
 autocmd BufRead,BufNewFile *.swift setlocal tabstop=4 shiftwidth=4
 autocmd FileType c setlocal tabstop=4 shiftwidth=4
 autocmd FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab

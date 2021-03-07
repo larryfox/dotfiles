@@ -43,6 +43,8 @@
 [rerere]
 	enabled = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = gpg
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = main

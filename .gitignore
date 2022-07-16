@@ -3,3 +3,4 @@ scripts/
 emacs/
 .netrwhist
 nvim/.config/nvim/bundle/
+fish/.config/fish/fish_variables

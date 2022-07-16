@@ -23,6 +23,3 @@ set -gxp MANPATH /opt/homebrew/opt/coreutils/libexec/gnuman
 
 # Local bins
 contains $HOME/bin $fish_user_paths; or set -Up fish_user_paths $HOME/bin
-
-# Node
-contains $HOME/.nvm/current/bin $fish_user_paths; or set -Up fish_user_paths $HOME/.nvm/current/bin

@@ -1,7 +1,7 @@
 [user]
   name = Larry Fox
-  email = l@rryfox.us
-	signingkey = DE0A99918B8F7E5D
+	email = git@larryfox.org
+	signingKey = BBCED749EA857BC7!
 
 [credential]
   helper = osxkeychain

@@ -1,4 +1,4 @@
-# .dotfiles
+# dotfiles
 
 1. Clone this repo into `$HOME`
 2. Install the `Brewfile`
@@ -15,6 +15,5 @@
 
 
 #### Setting fish as the login shell
-1. Append `/usr/local/bin/fish` to `/etc/shells`
-2. `chsh -s /usr/local/bin/fish`
-
+1. `$ echo $(brew --prefix fish) >> /etc/shells`
+2. `$ chsh -s $(brew --prefix fish)`

@@ -1,4 +1,4 @@
-function random
+function random64
     set -l num "33"
 
     if test (count $argv) -gt 0

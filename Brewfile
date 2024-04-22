@@ -4,23 +4,19 @@ brew 'stow'
 # gnu tools
 brew 'coreutils'
 
-# terminal sanity
 brew 'fish'
 
 brew 'neovim'
+brew 'rg'
+brew 'fzf'
+brew 'lua-language-server'
 
-# better grep
-brew 'ripgrep'
-
-# development
 brew 'git'
-
-# rubby
-#brew 'chruby'
-#brew 'chruby-fish'
-#brew 'ruby-install'
-#brew 'https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb',
-#  args: ['HEAD']
-
 brew 'go'
 
+# rubby
+# brew 'chruby'
+# brew 'chruby-fish'
+# brew 'ruby-install'
+# brew 'https://raw.github.com/postmodern/gem_home/master/homebrew/gem_home.rb',
+#  args: ['HEAD']

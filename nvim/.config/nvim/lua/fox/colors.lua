@@ -1,6 +1,8 @@
-local signdef = vim.fn.sign_define
+local signdef = function(str, opt)
+  -- vim.fn.sign_define(str, opt)
+end
 local highlight = function(str, opt)
-  vim.api.nvim_set_hl(0, str, opt)
+  -- vim.api.nvim_set_hl(0, str, opt)
 end
 
 Colors = {}

@@ -5,7 +5,7 @@ vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.cmd.syntax "off"
+-- vim.cmd.syntax "off"
 vim.opt.termguicolors = true
 vim.opt.background = "light"
 

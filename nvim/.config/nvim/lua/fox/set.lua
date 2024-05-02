@@ -10,8 +10,6 @@ vim.opt.termguicolors = true
 vim.opt.background = "light"
 
 vim.opt.wrap = false
-vim.opt.list = true
-vim.opt.listchars = { extends = "▶" }
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -30,6 +28,7 @@ vim.opt.updatetime = 50
 vim.opt.timeoutlen = 500
 
 vim.opt.colorcolumn = "80"
+vim.opt.tabstop = 4
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0

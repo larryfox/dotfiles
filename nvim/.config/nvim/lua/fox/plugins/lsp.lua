@@ -15,6 +15,7 @@ return {
 
       lspconfig.tsserver.setup { capabilities = capabilities }
       lspconfig.gopls.setup { capabilities = capabilities }
+      lspconfig.zls.setup{ capabilities = capabilities }
       lspconfig.lua_ls.setup {
         capabilities = capabilities,
         settings = {

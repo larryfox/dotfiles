@@ -9,6 +9,7 @@ brew 'fish'
 brew 'neovim'
 brew 'rg'
 brew 'fzf'
+brew 'fd'
 brew 'lua-language-server'
 
 brew 'git'

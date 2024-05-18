@@ -44,7 +44,9 @@ return {
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           local opts = { buffer = event.buf }
 
-          client.server_capabilities.semanticTokensProvider = nil
+          if client then
+            client.server_capabilities.semanticTokensProvider = nil
+          end
 
           vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 

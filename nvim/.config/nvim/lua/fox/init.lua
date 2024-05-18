@@ -3,6 +3,9 @@ require("fox.colors")
 require("fox.remap")
 require("fox.lazy")
 
+-- I've always used <cmd>E as a shortcut for <cmd>Explore, and EditQuery causes ambiguities
+vim.api.nvim_del_user_command('EditQuery')
+
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 

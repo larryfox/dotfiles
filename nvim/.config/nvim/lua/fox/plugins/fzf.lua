@@ -21,6 +21,5 @@ return {
     vim.keymap.set("n", "<leader>l", fzflua.blines, { silent = true })
     vim.keymap.set("n", "<leader>w", fzflua.grep_cword, { silent = true })
     vim.keymap.set("n", "<leader>gf", fzflua.git_files, { silent = true })
-    vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>", fzflua.complete_path, { silent = true })
   end
 }

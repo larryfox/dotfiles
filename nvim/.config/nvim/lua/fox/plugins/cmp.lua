@@ -4,20 +4,17 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "saadparwaiz1/cmp_luasnip",
   },
-  event = { "InsertEnter", "CmdlineEnter" },
+  event = "InsertEnter",
   config = function()
     local cmp = require("cmp")
-    local ls = require("luasnip")
 
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
     cmp.setup {
       snippet = {
         expand = function(args)
-          ls.lsp_expand(args.body)
+          vim.snippet.expand(args.body)
         end,
       },
       completion = { completeopt = "menu,menuone,noinsert" },
@@ -29,7 +26,6 @@ return {
       },
       sources = {
         { name = "nvim_lsp" },
-        { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
       },

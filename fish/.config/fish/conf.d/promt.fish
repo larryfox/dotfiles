@@ -16,15 +16,21 @@ set __fish_git_prompt_color_branch --bold green
 # set __fish_git_prompt_color --bold 666
 
 function fish_prompt
-  printf '%s%s%s ❯ ' \
+  string join "" -- \
     (set_color $fish_color_cwd) \
     (path basename (prompt_pwd)) \
-    (set_color normal)
+    (set_color normal) " ❯ "
 end
 
 function fish_right_prompt
-  printf '%s %s%s%s' (fish_git_prompt) \
-    (set_color brgrey) \
-    (date "+%R") \
-    (set_color normal)
+  set -l last_status $status
+  set -l stat
+  if test $last_status -ne 0
+    set stat (set_color red)"[$last_status]"(set_color normal)
+  else
+    set stat (set_color green)"[$last_status]"(set_color normal)
+  end
+  set -l curtime (set_color brgrey)(date "+%R")(set_color normal)
+
+  string join " " -- (fish_git_prompt) $curtime $stat
 end

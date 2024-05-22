@@ -3,7 +3,11 @@ set CDPATH . $HOME/Code $CDPATH
 set -gx EDITOR "nvim"
 set -gx VISUAL $EDITOR
 
-# Don’t clear the screen after quitting a manual page
-set MANPAGER "less -X"
-
 bind \cf tmux-sessionizer
+
+function search_history
+    commandline \
+        (history | fzf --height=15 --reverse --scheme=history --prompt="history: ")
+    commandline -f repaint
+end
+bind \cr search_history

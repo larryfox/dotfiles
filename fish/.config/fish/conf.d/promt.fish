@@ -19,18 +19,6 @@ function fish_prompt
   string join "" -- \
     (set_color $fish_color_cwd) \
     (path basename (prompt_pwd)) \
-    (set_color normal) " ❯ "
-end
-
-function fish_right_prompt
-  set -l last_status $status
-  set -l stat
-  if test $last_status -ne 0
-    set stat (set_color red)"[$last_status]"(set_color normal)
-  else
-    set stat (set_color green)"[$last_status]"(set_color normal)
-  end
-  set -l curtime (set_color brgrey)(date "+%R")(set_color normal)
-
-  string join " " -- (fish_git_prompt) $curtime $stat
+    (set_color normal) \
+    (fish_git_prompt) " ❯ "
 end

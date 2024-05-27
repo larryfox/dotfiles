@@ -18,12 +18,24 @@ return {
                 end,
             },
             completion = { completeopt = "menu,menuone,noinsert" },
-            mapping = cmp.mapping.preset.insert({
-                ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-                ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+            mapping = {
+                ["<C-n>"] = function()
+                    if vim.snippet.active({ direction = 1 }) then
+                        vim.snippet.jump(1)
+                    else
+                        cmp.mapping.select_next_item(cmp_select)
+                    end
+                end,
+                ["<C-p>"] = function()
+                    if vim.snippet.active({ direction = -1 }) then
+                        vim.snippet.jump(-1)
+                    else
+                        cmp.mapping.select_prev_item(cmp_select)
+                    end
+                end,
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete({}),
-            }),
+            },
             sources = {
                 { name = "nvim_lsp" },
                 { name = "buffer" },

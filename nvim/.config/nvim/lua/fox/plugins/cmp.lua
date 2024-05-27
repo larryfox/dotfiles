@@ -19,21 +19,31 @@ return {
             },
             completion = { completeopt = "menu,menuone,noinsert" },
             mapping = {
-                ["<C-n>"] = function()
-                    if vim.snippet.active({ direction = 1 }) then
+                ["<C-n>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        cmp.select_next_item(cmp_select)
+                    elseif vim.snippet.active({ direction = 1 }) then
                         vim.snippet.jump(1)
                     else
-                        cmp.mapping.select_next_item(cmp_select)
+                        fallback()
                     end
-                end,
-                ["<C-p>"] = function()
-                    if vim.snippet.active({ direction = -1 }) then
+                end, { "i", "s" }),
+                ["<C-p>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        cmp.select_prev_item(cmp_select)
+                    elseif vim.snippet.active({ direction = -1 }) then
                         vim.snippet.jump(-1)
                     else
-                        cmp.mapping.select_prev_item(cmp_select)
+                        fallback()
+                    end
+                end, { "i", "s" }),
+                ["<C-y>"] = function(fallback)
+                    if cmp.visible() then
+                        cmp.confirm({ select = true })
+                    else
+                        fallback()
                     end
                 end,
-                ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete({}),
             },
             sources = {

@@ -9,10 +9,6 @@ return {
         local telescope = require("telescope")
         telescope.setup({
             defaults = {
-                file_ignore_patterns = {
-                    "node_modules",
-                    ".git",
-                },
                 layout_strategy = "vertical",
                 layout_config = {
                     height = 0.5,
@@ -32,5 +28,8 @@ return {
                 search = word,
             })
         end, { silent = true })
+        vim.keymap.set('n', '<leader>sp', function()
+            builtin.grep_string({ search = vim.fn.input("Grep > ") })
+        end)
     end,
 }

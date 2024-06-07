@@ -1,50 +1,55 @@
 [user]
-  name = Larry Fox
-	email = git@larryfox.org
-	signingKey = BBCED749EA857BC7!
+    name = Larry Fox
+    email = git@larryfox.org
+    signingKey = BBCED749EA857BC7!
 
 [credential]
-  helper = osxkeychain
+    helper = osxkeychain
 
 [push]
-  default = simple
+    autoSetupRemote = true
 
 [core]
-  excludesfile = ~/.gitignore
-  editor = nvim
+    excludesfile = ~/.gitignore
+    editor = nvim
 
 [color]
-  ui = auto
+    ui = auto
 
 [alias]
-  a = add
-  branches = branch -a --color
-  ammend = commit --amend
-  co = checkout
-  cof = checkout --
-  cob = checkout -b
-  df = diff
-  dfc = diff --cached
-  l = log --oneline
-  last = show -s --oneline
-  plr = pull --rebase
-  pushup = !git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`
-  summary = log --oneline --since=last.mon --reverse
-  unstage = reset HEAD --
-  # undo last commit and keep changes
-  undo = reset --soft HEAD^
-  wip = commit -m WIP
-  # abandon ship
-  fuckthis = !git fetch origin && git reset --hard origin/`git symbolic-ref --short HEAD`
+    a = add
+    branches = branch -a --color
+    amend = commit --amend
+    co = checkout
+    cof = checkout --
+    cob = checkout -b
+    df = diff
+    dfc = diff --cached
+    l = log --oneline
+    last = show -s --oneline
+    plr = pull --rebase
+    pushup = !git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`
+    summary = log --oneline --since=last.mon --reverse
+    unstage = reset HEAD --
+    # undo last commit and keep changes
+    undo = reset --soft HEAD^
+    wip = commit -m WIP
+    # abandon ship
+    fuckthis = !git fetch origin && git reset --hard origin/`git symbolic-ref --short HEAD`
 
 [github]
-  user = larryfox
+    user = larryfox
 
+[diff]
+    algorithm = histogram
 [rerere]
-	enabled = true
+    enabled = true
 [gpg]
-	program = gpg
+    program = gpg
 [commit]
-	gpgsign = true
+    verbose = true
+    gpgsign = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[branch]
+    sort = -committerdate

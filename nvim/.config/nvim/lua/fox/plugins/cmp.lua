@@ -12,7 +12,7 @@ return {
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
-            snippet = {
+           snippet = {
                 expand = function(args)
                     vim.snippet.expand(args.body)
                 end,

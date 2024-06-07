@@ -7,7 +7,6 @@ vim.opt.relativenumber = true
 
 -- vim.cmd.syntax "off"
 vim.opt.termguicolors = true
-vim.opt.background = "light"
 
 vim.opt.wrap = false
 
@@ -37,3 +36,13 @@ vim.opt.smartindent = true
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+vim.diagnostic.config({
+    severity_sort = true,
+    virtual_text = {
+        prefix = "▍",
+    },
+    float = {
+        source = true,
+    },
+});

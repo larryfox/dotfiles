@@ -57,9 +57,9 @@ autocmd("LspAttach", {
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         local opts = { buffer = event.buf }
 
-        if client then
-            client.server_capabilities.semanticTokensProvider = nil
-        end
+        -- if client then
+        --     client.server_capabilities.semanticTokensProvider = nil
+        -- end
 
         vim.bo[event.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 

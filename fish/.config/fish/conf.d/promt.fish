@@ -13,12 +13,19 @@ set __fish_git_prompt_color_dirtystate --bold red
 set __fish_git_prompt_char_stagedstate "±"
 set __fish_git_prompt_color_stagedstate --bold green
 set __fish_git_prompt_color_branch --bold green
-# set __fish_git_prompt_color --bold 666
 
 function fish_prompt
-  string join "" -- \
-    (set_color $fish_color_cwd) \
-    (path basename (prompt_pwd)) \
-    (set_color normal) \
-    (fish_git_prompt) " ❯ "
+    set -l last_status $status
+
+    echo -n $USER@$hostname
+    set_color $fish_color_cwd
+    echo -n (prompt_pwd)
+    set_color normal
+    echo -n (fish_git_prompt)
+
+    if not test $last_status -eq 0
+        set_color $fish_color_error
+    end
+    echo -n " ❯ "
+    set_color normal
 end

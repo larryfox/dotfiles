@@ -6,7 +6,6 @@ set -gxp INFOPATH "/opt/homebrew/share/info"
 
 fish_add_path --append /opt/homebrew/bin
 fish_add_path --append /opt/homebrew/sbin
-fish_add_path $HOME/.platform-bin
 fish_add_path $HOME/.local/bin
 
 # GNU core utilities without 'g' prefix

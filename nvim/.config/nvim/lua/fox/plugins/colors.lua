@@ -1,8 +1,8 @@
 return {
     lazy = false,
     -- 'Verf/deepwhite.nvim',
-    "cideM/yui",
     -- "savq/melange-nvim",
+    "cideM/yui",
     config = function()
         vim.opt.background = "light"
         vim.g.yui_comments = "fade"

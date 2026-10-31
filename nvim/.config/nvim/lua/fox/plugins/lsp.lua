@@ -4,7 +4,6 @@ return {
         "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-        local lspconfig = require("lspconfig")
         local capabilities = vim.tbl_deep_extend(
             "force",
             {},
@@ -12,15 +11,20 @@ return {
             require("cmp_nvim_lsp").default_capabilities()
         )
 
-        lspconfig.gleam.setup({ capabilities = capabilities })
-        lspconfig.ts_ls.setup({ capabilities = capabilities })
-        lspconfig.gopls.setup({ capabilities = capabilities })
-        lspconfig.zls.setup({ capabilities = capabilities })
-        lspconfig.elixirls.setup({
+        vim.lsp.config('gleam', { capabilities = capabilities })
+        vim.lsp.enable('gleam')
+        vim.lsp.config('ts_ls', { capabilities = capabilities })
+        vim.lsp.enable('ts_ls')
+        vim.lsp.config('gopls', { capabilities = capabilities })
+        vim.lsp.enable('gopls')
+        vim.lsp.config('zls', { capabilities = capabilities })
+        vim.lsp.enable('zls')
+        vim.lsp.config('elixirls', {
             capabilities = capabilities,
             cmd = { "/Users/fox/.config/elixir_ls/language_server.sh" },
         })
-        lspconfig.lua_ls.setup({
+        vim.lsp.enable('elixirls')
+        vim.lsp.config('lua_ls', {
             capabilities = capabilities,
             settings = {
                 Lua = {
@@ -41,5 +45,6 @@ return {
                 },
             },
         })
+        vim.lsp.enable('lua_ls')
     end,
 }

@@ -54,7 +54,7 @@ autocmd("InsertLeave", {
 autocmd("LspAttach", {
     group = FoxGroup,
     callback = function(event)
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        -- local client = vim.lsp.get_client_by_id(event.data.client_id)
         local opts = { buffer = event.buf }
 
         -- if client then

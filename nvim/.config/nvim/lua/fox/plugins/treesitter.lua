@@ -1,5 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    branch = 'main',
     build = ":TSUpdate",
     opts = {
         ensure_installed = {
@@ -25,7 +27,6 @@ return {
         },
     },
     config = function(_, opts)
-        require("nvim-treesitter.install").prefer_git = true
-        require("nvim-treesitter.configs").setup(opts)
+        require("nvim-treesitter").setup(opts)
     end,
 }
